@@ -36,6 +36,10 @@ output * bg ~/.config/sway/bg.png fill
 # Samsung TV deaktivieren
 output "Samsung Electric Company SAMSUNG 0x01000E00" power off
 
+# Position von Iiyama PL2561H über dem Hauptmonitor
+output "Iiyama North America PL2561H 1188814541854" position 0,0
+output "Iiyama North America PL3271Q 0x01010101" position -640,1080
+
 #
 # Example configuration:
 #
