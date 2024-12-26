@@ -4,6 +4,12 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# autostarts
+exec discord
+for_window [class="discord"] move container to workspace 2
+
+exec mako
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -26,19 +32,50 @@ input * {
 }
 
 gaps inner 5
-default_border pixel 3
+default_border pixel 5
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/.config/sway/bg.png fill
 
-# Samsung TV deaktivieren
+# disable Samsung TV 
 output "Samsung Electric Company SAMSUNG 0x01000E00" power off
 
-# Position von Iiyama PL2561H über dem Hauptmonitor
+# Positions of Iiyama Monitors (smaller over the bigger)
 output "Iiyama North America PL2561H 1188814541854" position 0,0
 output "Iiyama North America PL3271Q 0x01010101" position -640,1080
+
+# font
+font pango:Iosevka Nerd Font Regular 10
+
+# Catppuccin-Frappe Theme
+set $rosewater #f2d5cf
+set $flamingo #eebebe
+set $pink #f4b8e4
+set $mauve #ca9ee6
+set $red #e78284
+set $maroon #ea999c
+set $peach #ef9f76
+set $yellow #e5c890
+set $green #a6d189
+set $teal #81c8be
+set $sky #99d1db
+set $sapphire #85c1dc
+set $blue #8caaee
+set $lavender #babbf1
+set $text #c6d0f5
+set $subtext1 #b5bfe2
+set $subtext0 #a5adce
+set $overlay2 #949cbb
+set $overlay1 #838ba7
+set $overlay0 #737994
+set $surface2 #626880
+set $surface1 #51576d
+set $surface0 #414559
+set $base #303446
+set $mantle #292c3c
+set $crust #232634
 
 #
 # Example configuration:
@@ -227,6 +264,11 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
+# Theme Colors
+#
+#
+#
+
 #
 # Status Bar:
 #
@@ -236,11 +278,11 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y/%m/%d %H:%M'; do sleep 1; done
+    status_command while ~/.config/sway/status.sh; do sleep 1; done
 
     colors {
-        statusline #ffffff
-        background #323232
+        statusline $text
+        background $base
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
