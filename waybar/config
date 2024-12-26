@@ -1,0 +1,92 @@
+{
+  "layer": "top",
+  "position": "left",
+  "width": 28,
+  "margin": "5 0 5 5",
+  "spacing": 10,
+  "modules-left": [
+    "clock",
+    "tray"
+  ],
+  "modules-center": [
+    "sway/workspaces",
+  ],
+  "modules-right": [
+    "memory",
+    "disk",
+    "cpu",
+    "temperature",
+    "pulseaudio",
+    "sway/language",
+  ],
+  "custom/sep": {
+    "format": "──"
+    // "format": ""
+  },
+  "custom/powermenu": {
+    "on-click": "~/.config/wofi/scripts/wofipowermenu.py",
+    "format": "",
+    "tooltip": false
+  },
+  "clock": {
+    "tooltip": true,
+    "format": "{:%H\n%M}",
+    "tooltip-format": "{:%Y/%m/%d}",
+  },
+  "tray": {
+    "icon-size": 18,
+    "show-passive-items": "true"
+  },
+  "sway/language": {
+    "format": "{flag}",
+  },
+  "cpu": {
+    "rotate": 90,
+    "interval": 1,
+    "format": "   {usage}%",
+    "max-length": 10
+  },
+  "disk": {
+        "rotate": 90,
+	"interval": 30,
+	"format": "  {specific_free:0.0f} GB",
+	"unit": "GB"
+  },
+  "memory": {
+    "rotate": 90,
+    "interval": 5,
+    "format": "   {used:0.1f}G",
+  },
+  "temperature": {
+    "rotate": 90,
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format": "{icon}  {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    "rotate": 90,
+    "format": "{icon}   {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "MUTE ",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 3,
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  }
+}

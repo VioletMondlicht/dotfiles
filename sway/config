@@ -77,6 +77,17 @@ set $base #303446
 set $mantle #292c3c
 set $crust #232634
 
+# own theme colors
+set $smokyblack         #131200
+set $darkpurple         #42113c
+set $frenchmauve        #c86fc9
+set $carnationpink      #f79ad3
+set $verdigris          #48a9a6
+set $folly              #ff495c
+set $aquamarine         #18f2b2
+set $sunglow            #fdca40
+set $bluecrayola        #3772ff
+set $pictonblue         #3fa7d6
 #
 # Example configuration:
 #
@@ -134,7 +145,8 @@ set $crust #232634
     # mouse button for dragging.
     floating_modifier $mod normal
 
-    # Reload the configuration file bindsym $mod+Shift+c reload
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -271,20 +283,27 @@ bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
-#
+bar swaybar_command waybar
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
+# bar {
+#     position top
+# 
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while ~/.config/sway/status.sh; do sleep 1; done
+# 
+#     colors {
+#         statusline $text
+#         background $darkpurple
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while ~/.config/sway/status.sh; do sleep 1; done
+# Sway Theme            border  bg      text    indicat child border
+client.focused          #ea00d9 #ea00d9 #000b1e #04d9ff #ea00d9 
+client.focused_inactive	#000b1e #000b1e #0abdc6 #02788d #000b1e
+client.unfocused    	#000000 #000b1e #0abdc6 #02788d #000000
+client.urgent           #ff0000 #ff0000 #000b1e #ff0000 #ff0000
 
-    colors {
-        statusline $text
-        background $base
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
 
 include /etc/sway/config.d/*
