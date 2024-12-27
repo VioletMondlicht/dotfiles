@@ -262,6 +262,15 @@ require("lazy").setup({
 		},
 	},
 
+	{
+		"akai54/2077.nvim",
+		priority = 1000,
+		init = function()
+			vim.cmd.colorscheme("2077")
+			vim.cmd.hi("Comment gui=none")
+		end,
+	},
+
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
 	-- This is often very useful to both group configuration, as well as handle
