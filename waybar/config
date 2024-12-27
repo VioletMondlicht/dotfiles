@@ -6,6 +6,7 @@
   "spacing": 10,
   "modules-left": [
     "clock",
+    "sway/mode",
     "tray"
   ],
   "modules-center": [
@@ -39,6 +40,10 @@
   },
   "sway/language": {
     "format": "{flag}",
+  },
+  "sway/mode": {
+    "rotate": 90,
+    "format": "󰩨 ",
   },
   "cpu": {
     "rotate": 90,

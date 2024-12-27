@@ -58,6 +58,9 @@ tooltip * {
 #cpu {
   color: #18f2b2;
 }
+#mode {
+  color: #ff495c;
+}
 #disk {
   color: #c86fc9;
 }
