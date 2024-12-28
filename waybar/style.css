@@ -1,8 +1,8 @@
  * {
   border: none;
-  font-family: "Iosevka Nerd Font Regular";
+  font-family: "Iosevka Extended", "Font Awesome 6 Free", "Font Awesome 6 Brands";
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
   background: none;
 }
 
@@ -40,7 +40,7 @@ tooltip * {
 }
 #workspaces button {
   color: #784278;
-  font-weight: 800;
+  font-weight: 200;
   background: none;
   padding: 0;
 }

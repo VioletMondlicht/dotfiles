@@ -33,11 +33,6 @@
     "format-icons": "󰾲",
     "on-click": "foot nvtop",
   },
-  "custom/powermenu": {
-    "on-click": "~/.config/wofi/scripts/wofipowermenu.py",
-    "format": "",
-    "tooltip": false
-  },
   "clock": {
     "tooltip": true,
     "format": "{:%H\n%M}",
@@ -57,25 +52,25 @@
   "cpu": {
     "rotate": 90,
     "interval": 1,
-    "format": "   {usage}%",
+    "format": " {usage}%",
     "max-length": 10
   },
   "disk": {
         "rotate": 90,
 	"interval": 30,
-	"format": "  {specific_free:0.0f} GB",
+	"format": " {specific_free:0.0f} GB",
 	"unit": "GB"
   },
   "memory": {
     "rotate": 90,
     "interval": 5,
-    "format": "   {used:0.1f}G",
+    "format": " {used:0.1f}G",
   },
   "temperature": {
     "rotate": 90,
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
     "critical-threshold": 80,
-    "format": "{icon}  {temperatureC}°C",
+    "format":"{icon} {temperatureC}°C",
     "format-icons": [
       "",
       "",
@@ -99,8 +94,6 @@
         ""
       ]
     },
-    "scroll-step": 3,
-    "on-click": "pavucontrol",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+    "scroll-step": 5,
   }
 }
