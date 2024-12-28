@@ -31,10 +31,9 @@ tooltip * {
 #workspaces,
 #clock,
 #custom-bluetooth_devices,
-#custom-powermenu,
+#custom-gpu-usage,
 #pulseaudio,
-#tray {
-}
+#tray, 
 #workspaces {
   border-radius: 4px;
   font-weight: 800;
@@ -51,6 +50,9 @@ tooltip * {
 #workspaces button.focused {
   color: #c86fc9;
   font-weight: 800;
+}
+#custom-gpu-usage {
+  color: #18f2b2;
 }
 #temperature {
   color: #fdca40;

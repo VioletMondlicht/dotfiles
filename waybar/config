@@ -13,6 +13,7 @@
     "sway/workspaces",
   ],
   "modules-right": [
+    "custom/gpu-usage",
     "memory",
     "disk",
     "cpu",
@@ -23,6 +24,14 @@
   "custom/sep": {
     "format": "──"
     // "format": ""
+  },
+  "custom/gpu-usage": {
+    "rotate": 90,
+    "format": "󰾲  {}",
+    "exec": "gpu-usage-waybar",
+    "return-type": "json",
+    "format-icons": "󰾲",
+    "on-click": "foot nvtop",
   },
   "custom/powermenu": {
     "on-click": "~/.config/wofi/scripts/wofipowermenu.py",
