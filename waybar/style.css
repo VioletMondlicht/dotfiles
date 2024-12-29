@@ -54,8 +54,20 @@ tooltip * {
 #custom-gpu-usage {
   color: #18f2b2;
 }
+@keyframes blink {
+    to {
+        color: #ff495c;
+    }
+}
 #temperature {
   color: #fdca40;
+}
+#temperature.critical {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 #cpu {
   color: #18f2b2;
@@ -82,4 +94,5 @@ tooltip * {
 #pulseaudio.muted {
   color: #ff495c;
 }
+
 

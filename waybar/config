@@ -56,10 +56,10 @@
     "max-length": 10
   },
   "disk": {
-        "rotate": 90,
-	"interval": 30,
-	"format": " {specific_free:0.0f} GB",
-	"unit": "GB"
+    "rotate": 90,
+    "interval": 30,
+    "format": " {specific_free:0.0f} GB",
+    "unit": "GB"
   },
   "memory": {
     "rotate": 90,
@@ -69,7 +69,7 @@
   "temperature": {
     "rotate": 90,
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-    "critical-threshold": 80,
+    "critical-threshold": 75,
     "format":"{icon} {temperatureC}°C",
     "format-icons": [
       "",
