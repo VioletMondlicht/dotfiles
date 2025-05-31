@@ -12,7 +12,7 @@ exec mako
 
 ### Variables
 #
-# Logo key. Use Mod1 for Alt.
+# Mod 4 Logo key.
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -25,26 +25,27 @@ set $term foot
 set $menu wmenu-run
 
 input * {
-  xkb_layout de
+  xkb_layout de,eu
   xkb_options caps:swapescape
+  xkb_numlock enabled
   accel_profile flat
   pointer_accel 0.0
 }
+
+input 1356:3302:DualSense_Wireless_Controller_Touchpad events disabled
 
 gaps inner 5
 default_border pixel 5
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Default wallpaper 
 output * bg ~/.config/sway/bg.png fill
 
-# disable Samsung TV 
-output "Samsung Electric Company SAMSUNG 0x01000E00" power off
-
-# Positions of Iiyama Monitors (smaller over the bigger)
-output "Iiyama North America PL2561H 1188814541854" mode 1920x1080@165.003Hz position 640,0
-output "Iiyama North America PL3271Q 0x01010101" mode 2560x1440@165Hz position 0,1080 max_render_time 1
+# Positions and Status of Monitors (32" Mainoutput in front, 25" secondary output left, 55" TV disabled)
+output "Iiyama North America PL2561H 1188814541854" mode 1920x1080@165.008Hz position 0,0  
+output "Iiyama North America PL3271Q 0x01010101" mode 2560x1440@165.003Hz position 1920,-360 max_render_time 1 adaptive_sync on
+output "Samsung Electric Company SAMSUNG 0x01000E00" disable
 
 # font
 font pango:Iosevka Nerd Font Regular 10
@@ -110,7 +111,7 @@ set $pictonblue         #3fa7d6
 
 ### Input configuration
 #
-# Example configuration:
+# Example configuration:s
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
 #       dwt enabled
@@ -150,7 +151,17 @@ set $pictonblue         #3fa7d6
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+### Own keybindings
 #
+    # turn swap for caps and escape on 
+#   bindsym $mod+Tab input * xkb_layout de, xkb_options caps:swapescape, accel_profile flat, pointer_accel 0.0
+#
+    # turn swap for caps and escape off
+#    bindsym $mod+Tab+Control_L input * xkb_layout de, accel_profile flat, pointer_accel 0.0
+
+bindsym $mod+BackSpace input * xkb_switch_layout next
+
 # Moving around:
 #
     # Move your focus around
